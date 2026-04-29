@@ -1,4 +1,4 @@
-# Kullanıcı testleri örneği
+#uni
 import unittest
 
 class TestUser(unittest.TestCase):
