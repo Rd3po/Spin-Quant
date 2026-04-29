@@ -1,4 +1,4 @@
-# Kullanıcı modeli örneği
+# initialize
 class User:
     def __init__(self, name, email):
         self.name = name
