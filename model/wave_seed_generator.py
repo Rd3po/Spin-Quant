@@ -4,7 +4,7 @@ import hashlib
 import math
 from math import pi 
 
-# -------------------- HELPER FONKSİYONLAR --------------------
+# -------------------- HELPER func --------------------
 
 def int_to_bits(n, bit_length=512):
     """Integer'ı 0/1 bit dizisine çevirir (MSB-first, sabit uzunluk)"""
@@ -12,7 +12,7 @@ def int_to_bits(n, bit_length=512):
         n = n & ((1 << bit_length) - 1)
     return bin(int(n))[2:].zfill(bit_length)
 
-# -------------------- YENİ MODİFİYE EDİLMİŞ FONKSİYON --------------------
+# --------------------  --------------------
 
 def generate_spin_quantum_data(input_string: str) -> tuple:
     """
@@ -35,7 +35,6 @@ def generate_spin_quantum_data(input_string: str) -> tuple:
     x_positions = []
     y_positions = []
     
-    # Kendi içinde bir 'dalga fonksiyonu' gibi davranan bir model
     A = math.sin(baslangic_degeri / (1 << 512) * pi) + 1.0
     B = math.cos(baslangic_degeri / (1 << 512) * pi) + 1.0
     C = (baslangic_degeri >> 256) / (1 << 256) * pi
@@ -61,7 +60,7 @@ def generate_spin_quantum_data(input_string: str) -> tuple:
     return (angles, x_positions, y_positions)
 
 
-# -------------------- ÖRNEK KULLANIM --------------------
+# -------------------- logic--------------------
 
 if __name__ == "__main__":
     test_string = "Merhaba dünya"
@@ -70,7 +69,6 @@ if __name__ == "__main__":
     
     angles, x_positions, y_positions = generate_qthash_data(input_bits)
     
-    # Sadece ilk birkaç değeri gösterelim
     print("Üretilen Açı, X ve Y Değerleri:")
     for i in range(5):
         print(f"Elektron {i+1}: Açı = {angles[i]:.2f}°, X = {x_positions[i]:.2f}, Y = {y_positions[i]:.2f}")
