@@ -13,7 +13,7 @@ import numpy as np
 import math
 
 # ---------------------------
-# Global sabitler / lookup table
+# lookup table
 # ---------------------------
 TABANLAR = {'00': 23, '01': 29, '10': 31, '11': 37}
 
@@ -22,7 +22,7 @@ MASK30  = (1 << 30) - 1
 
 
 
-# Trigonometrik lookup table 0-360 derece
+# Trigonometric lookup table 0-360 derece
 SIN_TABLE = np.sin(np.radians(np.arange(361)))
 COS_TABLE = np.cos(np.radians(np.arange(361)))
 
@@ -57,7 +57,7 @@ def bit_rotate_right(x, n, bits=512):
     return ((x >> n) | (x << (bits - n))) & ((1 << bits) - 1)
 
 # ---------------------------
-# baslangic_degeri_qthash_hybrid
+# qthash_hybrid
 # ---------------------------
 
 def baslangic_degeri_qthash_hybrid(blok_string: str, onceki_deger: int = 1, quant_bits: int = 256) -> int:
@@ -213,7 +213,7 @@ def generate_super_hybrid_quantum_hash_v2(input_text: str) -> str:
     return f'{final_int:0128x}'
 
 # ---------------------------
-# NIST Veri üretimi
+# NIST verifi
 # ---------------------------
 
 def generate_qthash_bit_stream(filename: str, num_sequences: int = 100, bits_per_sequence: int = 2_000_000):
@@ -247,7 +247,7 @@ def generate_qthash_bit_stream(filename: str, num_sequences: int = 100, bits_per
     print(f"📁 Dosya boyutu: {final_size_mb:.2f} MB")
 
 # ---------------------------
-# Analiz
+# Analyze
 # ---------------------------
 
 def analyze_hash_frequency(hash_string: str):
@@ -262,7 +262,7 @@ def analyze_hash_frequency(hash_string: str):
         print(f"'{char}': {count:3} kez ({percentage:.2f}%)")
 
 # ---------------------------
-# CLI / Örnek çalıştırma
+# CLI / boolean
 # ---------------------------
 
 if __name__ == "__main__":
